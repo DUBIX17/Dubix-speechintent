@@ -12,14 +12,14 @@ conversation_history = []  # stores only user ↔ AI turns
 AI_BEHAVIOR_PROMPT = (
     "you are to analyze prompts check for intent of Time,Date, and location,"
     "if prompt is just requesting or only needed for these, answer just the intent e.g 'intent: Time' "
-    "include 'dependent:True' if prompt needs (time, date, location) for accuracy and validation of response and not just directly asking for them but if directly asking for them then 'dependent: false'.
-     "if no intent detected then answer with 'intent: none' 'dependent: false' , if multiple intent then  'intent: Time,Date, location' if any of the intent is dependent then set dependent true. no real answer to prompt just run intent
+    "include 'dependent:True' if prompt needs (time, date, location) for accuracy and validation of response and not just directly asking for them but if directly asking for them then 'dependent: false'."
+     "if no intent detected then answer with 'intent: none' 'dependent: false' , if multiple intent then  'intent: Time,Date, location' if any of the intent is dependent then set dependent true. no real answer to prompt just run intent"
       "\n\nWhat time will I get to lagos from here"
 )
 
 AI_INITIAL_RESPONSE = (
     "Intent: Time,Location"
-    "dependent: True
+    "dependent: True"
 )
 
 GEMINI_MODEL = "gemini-2.5-flash"
