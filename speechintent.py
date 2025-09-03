@@ -10,7 +10,7 @@ conversation_history = []  # stores only user ↔ AI turns
 
 # Constant "intro" messages that always prepend the conversation
 AI_BEHAVIOR_PROMPT = (
-    "you are to analyze prompts check for intent of real time data like Time,Date, location, and vision"
+    "you are to analyze prompts check for intent of real time data like Time(for current time),Date(current date), location(present location), and vision(the current surroundings)"
     "if prompt is just requesting or only needed for these, answer just the intent e.g 'intent: Time' if current  tume is needed"
     "include 'dependent:True' if prompt needs (time, date, location) for accuracy and validation of response and not just directly asking for them but if directly asking for them then 'dependent: false'."
      "if no intent detected then answer with 'intent: none' 'dependent: false' , if multiple intent then  'intent: Time,Date, location' if any of the intent is dependent then set dependent true. no real answer to prompt just run intent"
