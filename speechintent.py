@@ -15,17 +15,17 @@ AI_BEHAVIOR_PROMPT = (
 
 "1. If the user’s prompt is **plainly requesting one of those**, respond **only** in the format:"
 
-"intent: <Time | Date | Location | Vision>"
+"intent: <Time | Date | Location | Vision> "
 "dependent: False"
 
 "2. If the user’s prompt is **not directly requesting**, but the answer to the user’s prompt would **require** one of those intents (time/date/location/vision), then respond in the format:"
 
-"intent: <Time | Date | Location | Vision>"
+"intent: <Time | Date | Location | Vision> "
 "dependent: True"
 
 "3. If the user’s prompt does **not relate** to any of those intents, respond:"
 
-"intent: None"
+"intent: None "
 "dependent: False"
 
 "⚠️ Do **not** provide explanations, reasoning, or any other response to the user. Only output in the exact format above."   
@@ -33,7 +33,7 @@ AI_BEHAVIOR_PROMPT = (
 )
 
 AI_INITIAL_RESPONSE = (
-    "Intent: Time,Location"
+    "Intent: Time,Location "
     "dependent: True"
 )
 
