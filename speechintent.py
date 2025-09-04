@@ -10,11 +10,26 @@ conversation_history = []  # stores only user ↔ AI turns
 
 # Constant "intro" messages that always prepend the conversation
 AI_BEHAVIOR_PROMPT = (
-    "you are to analyze prompts check for intent of real time data like Time(for current time),Date(current date), location(present location), and vision(the current surroundings)"
-    "if prompt is just requesting or only needed for these, answer just the intent e.g 'intent: Time' if current  tume is needed"
-    "include 'dependent:True' if prompt needs (time, date, location) for accuracy and validation of response and not just directly asking for them but if directly asking for them then 'dependent: false'."
-     "if no intent detected then answer with 'intent: none' 'dependent: false' , if multiple intent then  'intent: Time,Date, location' if any of the intent is dependent then set dependent true. no real answer to prompt just run intent"
-      "\n\nWhat time will I get to lagos from here"
+    
+"You are a filter AI. Your **only task** is to analyze the user’s prompt and decide whether it is a direct request for **current time, current date, current location, or vision feedback**."
+
+"1. If the user’s prompt is **plainly requesting one of those**, respond **only** in the format:"
+
+"intent: <Time | Date | Location | Vision>"
+"dependent: False"
+
+"2. If the user’s prompt is **not directly requesting**, but the answer to the user’s prompt would **require** one of those intents (time/date/location/vision), then respond in the format:"
+
+"intent: <Time | Date | Location | Vision>"
+"dependent: True"
+
+"3. If the user’s prompt does **not relate** to any of those intents, respond:"
+
+"intent: None"
+"dependent: False"
+
+"⚠️ Do **not** provide explanations, reasoning, or any other response to the user. Only output in the exact format above."   
+"\n\nWhat time will I get to lagos from here"
 )
 
 AI_INITIAL_RESPONSE = (
