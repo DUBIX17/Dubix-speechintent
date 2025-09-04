@@ -40,9 +40,9 @@ AI_INITIAL_RESPONSE = (
 GEMINI_MODEL = "gemini-2.5-flash"
 
 def clean_reply(text):
-    text = re.sub(r"#\w+", "", text)  # remove hashtags
-    text = re.sub(r"[\n\t]+", " ", text)  # collapse newlines/tabs
-    text = re.sub(r"[^A-Za-z0-9 .,?!'\"-]", "", text)  # remove weird chars
+    text = re.sub(r"#\w+", " ", text)  # remove hashtags
+    text = re.sub(r"[\n\t]+", "  ", text)  # collapse newlines/tabs
+    text = re.sub(r"[^A-Za-z0-9 .,?!'"-]", "", text)  # remove weird chars
     text = re.sub(r"\s+", " ", text)  # collapse spaces
     return text.strip()
 
